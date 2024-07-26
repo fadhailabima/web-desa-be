@@ -19,4 +19,6 @@ class Videos extends Model
         'content',
         'inputDate',
     ];
+
+    protected $guarded = [];
 }
