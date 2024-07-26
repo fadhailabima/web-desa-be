@@ -27,9 +27,11 @@ Route::middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
         return $request->user();
     });
 
+
     // User Session
     Route::post('/user', [UserController::class, 'tambahUser']);
     Route::delete('/user/{id}', [UserController::class, 'hapusUser']);
+    Route::post('/logout', [UserController::class, 'logout']);
 
     // Facilities Session
     Route::post('/category', [CategoriesController::class, 'tambahKategoriFasilitas']);

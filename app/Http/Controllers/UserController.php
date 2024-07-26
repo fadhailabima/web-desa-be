@@ -83,4 +83,16 @@ class UserController extends Controller
             'message' => 'User berhasil dihapus',
         ]);
     }
+
+    public function logout(Request $request)
+    {
+        $user = $request->user();
+
+        if ($user) {
+            $user->currentAccessToken()->delete();
+            return response()->json(['message' => 'Logout berhasil']);
+        } else {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+    }
 }
