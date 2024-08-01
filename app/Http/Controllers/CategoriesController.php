@@ -94,7 +94,7 @@ class CategoriesController extends Controller
     }
     public function getKategoriLokasi()
     {
-        $kategoriLokasi = Categories::all();
+        $kategoriLokasi = Catlocs::all();
 
         return response()->json([
             'message' => 'Berhasil mendapatkan semua kategori lokasi',
